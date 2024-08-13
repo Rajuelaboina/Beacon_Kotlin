@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#B4C6E7</color>
+    <color name="purple_700">#B4C6E7</color> <!-- #83A5E4-->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_gray">#AEAAAA</color>
+    <color name="btn_color">#4071CA</color>
+    <color name="resident_color">#2a43a5</color>
+    <color name="red_border">#E33232</color>
+    <color name="slide_menucolor">#AEAAAA</color>
+    <color name="red">#F10909</color>
+
+    <color name="slidemenu_item_selected" tools:ignore="ReferenceType">@drawable/drawer_item</color>
+    <color name="checkbox_filter_tint" tools:ignore="ReferenceType">@drawable/checkbox_filter_tint</color>
+</resources>

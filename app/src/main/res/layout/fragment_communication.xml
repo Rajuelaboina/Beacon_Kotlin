@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        tools:context=".ui.communication.CommunicationFragment">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/communicationTextInputLayout"
+                        style="@style/CustomTextInputLayoutStyle"
+                        android:hint="Location">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/communicationLocationSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/CustomDropTextInputLayoutStyle"
+                        android:gravity="center"
+                        android:hint="pgy">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/communicationPGYSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/CustomDropTextInputLayoutStyle"
+                        android:gravity="center"
+                        android:hint="Speciality">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/communicationspecialitySpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/CustomDropTextInputLayoutStyle"
+                        android:gravity="center"
+                        android:hint="Status">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/communicationStatusSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginBottom="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="25dp" >
+
+                    <TextView
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_gravity="start"/>
+
+                    <CheckBox
+                        android:id="@+id/checkBoxAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text=""
+                        android:gravity="center|end"
+                        android:layout_gravity="center|end"
+                        app:buttonTint="@color/checkbox_filter_tint" />
+
+                </LinearLayout>
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"
+                    android:scrollbarStyle="insideOverlay"
+                    android:fillViewport="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/recipient_label_TV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="TO" />
+
+                            <com.google.android.flexbox.FlexboxLayout
+                                android:id="@+id/recipient_group_FL"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="8dp"
+                                app:alignContent="flex_start"
+                                app:alignItems="center"
+                                app:flexDirection="row"
+                                app:flexWrap="wrap"
+                                app:justifyContent="flex_start"
+                                app:showDivider="middle|end">
+                                &lt;!&ndash; app:dividerDrawable="@drawable/divider"&ndash;&gt;
+
+                                <EditText
+                                    android:id="@+id/recipient_input_ET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:ems="10"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="none"
+                                    app:layout_flexGrow="1" />
+                                &lt;!&ndash;android:background="@android:color/transparent"&ndash;&gt;
+
+                            </com.google.android.flexbox.FlexboxLayout>
+                        </LinearLayout>-->
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/communicationRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            tools:listitem="@layout/item_row"
+                            android:visibility="visible"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <EditText
+                    android:id="@+id/editTextTextSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:hint="Subject"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"/>
+
+                <EditText
+                    android:id="@+id/editTextTextBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="Body "
+                    android:maxLines="50"
+                    android:imeOptions="actionDone"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_marginStart="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginStart="8dp"
+                        android:id="@+id/chooseImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Choose File"
+                        android:textAllCaps="false"
+                        app:backgroundTint="@color/btn_color" />
+
+                    <TextView
+                        android:id="@+id/fileNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="No file chosen "
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginStart="8dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sendEmailbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Send Mail"
+                    android:textAllCaps="false"
+                    app:backgroundTint="@color/btn_color" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>

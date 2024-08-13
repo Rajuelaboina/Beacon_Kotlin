@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.phycare.residentbeacon_kotlin.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_gray"
+        tools:context=".ui.login.LoginActivity">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:fillViewport="false"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26999998">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_recangle"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    app:srcCompat="@drawable/resident_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="@string/resident_beacon"
+                    android:textColor="@color/resident_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColorHint="@color/black"
+                    app:cursorColor="@color/black"
+                    app:hintTextColor="@color/black"
+
+                    app:shapeAppearance="@style/Rounded">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailEditTextText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:addTextChangedListener="@{viewModel.getEmailWatcher()}"
+                        android:ems="10"
+                        android:hint="@string/user_name"
+                        android:inputType="text"
+                        android:drawableEnd="@drawable/person_24"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout2"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColorHint="@color/black"
+                    app:cursorColor="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:passwordToggleEnabled="true"
+                    app:shapeAppearance="@style/Rounded"
+                    app:passwordToggleDrawable="@drawable/show_password_selector">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordEditTextText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:addTextChangedListener="@{viewModel.getPasswordWatcher()}"
+                        android:ems="10"
+                        android:hint="@string/password"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/remember_me"
+                    app:buttonTint="@color/checkbox_filter_tint" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/loginBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/login"
+                    android:onClick="@{(v) -> viewModel.onClick(v)}"
+                    app:backgroundTint="@color/btn_color" />
+                <!--android:onClick="@{(v) -> viewModel.onClick(v)}"-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBarLogin"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="292dp"
+            android:layout_marginBottom="391dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- <TextView
+             android:id="@+id/textView2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="17dp"
+             android:text="V 0.01"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/white" android:state_checked="true" />
+    <item android:color="@color/black" />
+</selector>
+   <!-- app:itemTextColor="@color/slidemenu_item_selected"-->
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:drawable="@color/teal_200" android:state_checked="true" />
+<item android:drawable="@android:color/transparent" />
+</selector>-->
+    <!--app:itemBackground="@drawable/nav_view_item_background"-->

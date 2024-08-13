@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.programs.ProgramsFragment2"
+    android:orientation="vertical">
+    <!--android:background="@color/background_gray"-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+
+
+       <!-- <EditText
+            android:id="@+id/programEditTextTextName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="10dp" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomTextInputLayoutStyle"
+            android:hint="Program Name"
+            >
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/programEditTextTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionDone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomDropTextInputLayoutStyle"
+            android:hint="@string/location"
+            >
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/locationspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomDropTextInputLayoutStyle"
+            android:hint="Speciality" >
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/programSpecialitySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/CustomTextView"
+        android:id="@+id/textViewProgramNoRecards"
+        android:text="No records found."
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBarPrograms"
+        style="@style/CustomProgress"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/programRecyclerView_PF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/programsearchitem_row"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="2dp"/>
+</LinearLayout>

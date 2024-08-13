@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.residents.ResidentsFragment"
+    android:id="@+id/ResidentsConstraintLayout">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewResident"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Resident"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+             />
+
+        <!--<androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Resident name"
+            android:maxLines="1"
+            android:ems="10"
+            android:paddingStart="10dp"
+            android:inputType="text" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/residentTextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxStrokeColor="@color/black"
+            app:placeholderTextColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintEnabled="true"
+            app:endIconMode="none"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="0dp">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:completionThreshold="3"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Location"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <!--<LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/recangle_box">
+
+                 <Spinner
+                     android:id="@+id/locationspinner"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:minHeight="48dp"
+                     android:layout_gravity="center"
+                     android:layout_marginEnd="0dp"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:spinnerMode="dropdown"/>
+            </LinearLayout>-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            app:boxStrokeColor="@color/black"
+            app:placeholderTextColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintEnabled="false"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/locationspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:completionThreshold="3"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pgy_linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location_linearLayout">
+
+        <TextView
+            android:id="@+id/pgyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="PGY"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            android:layout_gravity="center"
+            app:boxStrokeColor="@color/black"
+            app:placeholderTextColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintEnabled="false"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/pgyspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:completionThreshold="3"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+      <!--  <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/recangle_box"
+            >
+            <Spinner
+                android:id="@+id/pgyspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:spinnerMode="dropdown"/>
+
+        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/speciality_linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pgy_linearLayout">
+
+        <TextView
+            android:id="@+id/specialityTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Speciality"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            android:layout_gravity="center"
+            app:boxStrokeColor="@color/black"
+            app:placeholderTextColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:endIconTint="@color/black"
+            app:hintEnabled="false"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/specialitySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:completionThreshold="3"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+       <!-- <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/recangle_box"
+            >
+            <Spinner
+                android:id="@+id/SpecialitySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginEnd="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/residentSearchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Search"
+        app:backgroundTint="@color/btn_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speciality_linearLayout" />
+
+    <ProgressBar
+        android:id="@+id/progressBarResidents"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/location_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/location_linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/location_linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_residents"
+            android:icon="@drawable/nav_icon1"
+            android:title="@string/Resident" />
+        <item
+            android:id="@+id/nav_programs"
+            android:icon="@drawable/nav_icon2"
+            android:title="@string/program_name" />
+
+        <item
+            android:id="@+id/nav_manageproviders"
+            android:icon="@drawable/nav_icon4"
+            android:title="Manage Providers" />
+        <item
+            android:id="@+id/nav_communication"
+            android:icon="@drawable/nav_icon3"
+            android:title="Communication" />
+    </group>
+</menu>

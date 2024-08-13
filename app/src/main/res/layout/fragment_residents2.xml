@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.residents.ResidentFragments2">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomTextInputLayoutStyle"
+            android:hint="Resident name" >
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+           style="@style/CustomDropTextInputLayoutStyle"
+           android:hint="Location">
+
+           <com.google.android.material.textfield.MaterialAutoCompleteTextView
+               android:id="@+id/locationspinner"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:inputType="none" />
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomDropTextInputLayoutStyle"
+           android:hint="pgy"
+           >
+
+           <com.google.android.material.textfield.MaterialAutoCompleteTextView
+               android:id="@+id/pgyspinner"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:inputType="none"/>
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarResidents"
+        style="@style/CustomProgress"/>
+
+    <TextView
+        style="@style/CustomTextView"
+        android:id="@+id/textview_noRecords"
+        android:text="No records found."
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        android:paddingStart="1dp"
+        tools:listitem="@layout/search_item_row"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+</LinearLayout>
+
+

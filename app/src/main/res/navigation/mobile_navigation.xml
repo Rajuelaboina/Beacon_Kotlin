@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_residents">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.phycare.residentbeacon_kotlin.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_residents"
+        android:name="com.phycare.residentbeacon_kotlin.ui.residents.ResidentFragments2"
+        android:label="@string/menu_residents"
+        tools:layout="@layout/fragment_residents2" >
+        <action
+            android:id="@+id/action_nav_residents_to_nav_residentSearchDetailsFragment"
+            app:destination="@id/nav_residentSearchDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_programs"
+        android:name="com.phycare.residentbeacon_kotlin.ui.programs.ProgramsFragment2"
+        android:label="@string/menu_programs"
+        tools:layout="@layout/fragment_programs2" />
+    <fragment
+        android:id="@+id/nav_residentSearchDetailsFragment"
+        android:name="com.phycare.residentbeacon_kotlin.ui.residents.ResidentSearchDetailsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_resident_search_details" >
+        <action
+            android:id="@+id/action_nav_residentSearchDetailsFragment_to_nav_residents"
+            app:destination="@id/nav_residents" />
+        <action
+            android:id="@+id/action_nav_residentSearchDetailsFragment_to_nav_programs"
+            app:destination="@id/nav_programs" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_programSearchDetailsFragment"
+        android:name="com.phycare.residentbeacon_kotlin.ui.programs.ProgramSearchDetailsFragment"
+        android:label="fragment_program_search_details"
+        tools:layout="@layout/fragment_program_search_details" />
+    <fragment
+        android:id="@+id/nav_manageproviders"
+        android:name="com.phycare.residentbeacon_kotlin.ui.manageprovides.ManageProvidesFragment"
+        android:label="Manage Provides"
+        tools:layout="@layout/fragment_manage_provides" />
+    <fragment
+        android:id="@+id/nav_addUserFragment"
+        android:name="com.phycare.residentbeacon_kotlin.ui.manageprovides.AddUserFragment"
+        android:label="Add User"
+        tools:layout="@layout/fragment_add_user" />
+    <fragment
+        android:id="@+id/nav_communication"
+        android:name="com.phycare.residentbeacon_kotlin.ui.communication.CommunicationFragment"
+        android:label="Communication"
+        tools:layout="@layout/fragment_communication" />
+
+
+</navigation>
